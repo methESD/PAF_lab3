@@ -24,9 +24,7 @@ public class insert_item extends HttpServlet {
 	 	String name= request.getParameter("name");
 	 	Double price= Double.parseDouble(request.getParameter("price"));
         String desc= request.getParameter("desc");
-        
-        
-           
+             
         Item_m b = new Item_m();
        
        
@@ -37,7 +35,7 @@ public class insert_item extends HttpServlet {
                
         item_services item_m = new item_services();
         item_m.insertItem(b);
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/buyRETRIVE.jsp") ;
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/items.jsp") ;
         dispatcher.forward(request, response);
         doGet(request, response);
        
